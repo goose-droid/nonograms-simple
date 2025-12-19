@@ -1,3 +1,7 @@
+# Simple nonograms
+
+A webpage with simple nonogram puzzles.
+
 ## Todo 
 
 #### Puzzle done/submit
@@ -5,13 +9,14 @@
 - [x] reset button => function to reset puzzle
 
 #### bigger puzzles
-- [] add columns and rows -- 5x5?
+- [x] add columns and rows -- 5x5?
+- [] 10 x 10?
 
 #### Multipuzzle support -- random
-- [] class of puzzle, fields for solution and hints and name
-- [] array of puzzle objects to select a random one from
+- [x] class of puzzle, fields for solution and hints and name
+- [x] array of puzzle objects to select a random one from
 
-#### Make look not like crap
+#### Make look better
 - [] colors. fonts. arrangement on the page. etc.
 - [x] figure out how to make border taller (top) or wider (left) to hold longer hints
 
