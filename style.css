@@ -1,0 +1,30 @@
+.puzzle {
+    display: grid;
+    grid-template-columns: 100px 25px 25px 25px 25px 25px;
+    grid-template-rows: 100px 25px 25px 25px 25px 25px;
+}
+
+.puzzle div.border {
+    border: solid 2px red;
+    text-align: center;
+    padding: 5px;
+}
+
+.puzzle div.grid {
+    border: solid 2px black;
+    /*padding: 25px;*/
+    background-color:bisque;
+}
+
+.puzzle div.clicked {
+    background-color:aquamarine;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+}
+
+button.reset {
+    display: none;
+}
