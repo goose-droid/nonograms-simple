@@ -1,21 +1,21 @@
-# Todo 
+## Todo 
 
-### Puzzle done/submit
-[x] funtion to freeze puzzle after hitting submit
-[x] reset button => function to reset puzzle
+#### Puzzle done/submit
+- [x] funtion to freeze puzzle after hitting submit
+- [x] reset button => function to reset puzzle
 
-### bigger puzzles
-[] add columns and rows -- 5x5?
+#### bigger puzzles
+- [] add columns and rows -- 5x5?
 
-### Multipuzzle support -- random
-[] class of puzzle, fields for solution and hints and name
-[] array of puzzle objects to select a random one from
+#### Multipuzzle support -- random
+- [] class of puzzle, fields for solution and hints and name
+- [] array of puzzle objects to select a random one from
 
-### Make look not like crap
-[] colors. fonts. arrangement on the page. etc.
-[x] figure out how to make border taller (top) or wider (left) to hold longer hints
+#### Make look not like crap
+- [] colors. fonts. arrangement on the page. etc.
+- [x] figure out how to make border taller (top) or wider (left) to hold longer hints
 
-## Extra
+### Extra
 - Puzzle selector
 - Puzzles with varying sizes (class field?)
     - js generates grid instead of it being in html
