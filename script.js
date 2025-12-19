@@ -12,19 +12,6 @@ class Puzzle {
         Puzzle.puzzles.push(this);
 
     }
-
-    getSolution() {
-        return this.solution;
-    }
-
-    getHintValues() {
-        return this.hintValues;
-    }
-
-    get
-
-
-
 }
 
 const boxes = document.querySelectorAll(".puzzle div.grid");
@@ -33,7 +20,6 @@ const hints = document.querySelectorAll(".puzzle div.border");
 //const hintValues = ["", "1", "3", "1", "3", "1", "1", "1", "1", "1", "1"];
 //const solution = "1110100101111111111100000";
 const buttonCheck = document.querySelector("button.check");
-const body = document.querySelector("body");
 const result = document.querySelector("#result");
 const buttonReset = document.querySelector("button.reset"); 
 
@@ -42,27 +28,17 @@ const mugPuzzle = new Puzzle("0000011111111011110111111", ["", "4", "4", "4", "1
 const kiPuzzle = new Puzzle("0010011111001000111010101", ["", "1<br>1", "1<br>1", "5", "1<br>1", "1<br>1", "1", "5", "1", "3", "1, 1, 1"], "木 (tree)");
 const hiPuzzle = new Puzzle("0111101001011110100101111", ["", "0", "5", "1<br>1<br>1", "1<br>1<br>1", "5", "4", "1, 1", "4", "1, 1", "4"], "日 (sun)");
 
-const win = document.createElement("p");
-win.textContent = "win";
-
-const lose = document.createElement("p");
-lose.textContent = "lose";
+let currentPuzzle;
+let currentHintValues;
+let currentSolution;
 
 
 function toggleBox(e) {
     e.target.classList.toggle("clicked");
 }
 
-boxes.forEach((box) => {
-    box.addEventListener("click", toggleBox);
-})
-
-var currentPuzzle;
-var currentHintValues;
-var currentSolution;
-
 function getNewPuzzle() {
-    var puzzlePicker = Math.floor(Math.random() * (0 - Puzzle.puzzles.length) + Puzzle.puzzles.length);
+    let puzzlePicker = Math.floor(Math.random() * (0 - Puzzle.puzzles.length) + Puzzle.puzzles.length);
     currentPuzzle = Puzzle.puzzles[puzzlePicker];
     currentHintValues = currentPuzzle.hintValues;
     currentSolution = currentPuzzle.solution;
@@ -73,7 +49,9 @@ function getNewPuzzle() {
 
 getNewPuzzle();
 
-
+boxes.forEach((box) => {
+    box.addEventListener("click", toggleBox);
+})
 
 function checkAnswer() {
     var answer = "";
