@@ -1,11 +1,11 @@
 .puzzle {
     display: grid;
-    grid-template-columns: 100px 25px 25px 25px 25px 25px;
-    grid-template-rows: 100px 25px 25px 25px 25px 25px;
+    grid-template-columns: 100px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px;
+    grid-template-rows: 100px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px;
 }
 
 .puzzle div.border {
-    border: solid 2px red;
+    border: solid 2px rgb(16, 46, 219);
     text-align: center;
     padding: 5px;
 }
@@ -13,11 +13,15 @@
 .puzzle div.grid {
     border: solid 2px black;
     /*padding: 25px;*/
-    background-color:bisque;
+    background-color:rgb(220, 243, 241);
 }
 
 .puzzle div.clicked {
-    background-color:aquamarine;
+    background-color:rgb(31, 143, 143);
+}
+
+.puzzle div.exed {
+    background-color:coral;
 }
 
 button {

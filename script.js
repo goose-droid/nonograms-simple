@@ -22,10 +22,11 @@ const buttonCheck = document.querySelector("button.check");
 const buttonReset = document.querySelector("button.reset");
 
 //puzzles
-const circlePuzzle = new Puzzle("0000001110010100111000000", ["", "0", "3", "1<br>1", "3", "0", "0", "3", "1, 1", "3", "0"], "circle");
-const mugPuzzle = new Puzzle("0000011111111011110111111", ["", "4", "4", "4", "1<br>1", "4", "0", "5", "3, 1", "3, 1", "5"], "mug");
-const kiPuzzle = new Puzzle("0010011111001000111010101", ["", "1<br>1", "1<br>1", "5", "1<br>1", "1<br>1", "1", "5", "1", "3", "1, 1, 1"], "木 (tree)");
-const hiPuzzle = new Puzzle("0111101001011110100101111", ["", "0", "5", "1<br>1<br>1", "1<br>1<br>1", "5", "4", "1, 1", "4", "1, 1", "4"], "日 (sun)");
+//const circlePuzzle = new Puzzle("0000001110010100111000000", ["", "0", "3", "1<br>1", "3", "0", "0", "3", "1, 1", "3", "0"], "circle");
+//const mugPuzzle = new Puzzle("0000011111111011110111111", ["", "4", "4", "4", "1<br>1", "4", "0", "5", "3, 1", "3, 1", "5"], "mug");
+//const kiPuzzle = new Puzzle("0010011111001000111010101", ["", "1<br>1", "1<br>1", "5", "1<br>1", "1<br>1", "1", "5", "1", "3", "1, 1, 1"], "木 (tree)");
+//const hiPuzzle = new Puzzle("0111101001011110100101111", ["", "0", "5", "1<br>1<br>1", "1<br>1<br>1", "5", "4", "1, 1", "4", "1, 1", "4"], "日 (sun)");
+const heart = new Puzzle("0000000000011000110011110111101111111110111111111001111111000111111100001111100000011100000000100000", ["", "3", "6", "7", "7", "7", "7", "7", "6", "3", "0", "0", "2, 2", "4, 4", "9", "9", "7", "7", "5", "3", "1"], "heart");
 
 //variables
 let currentPuzzle;
@@ -34,8 +35,21 @@ let currentSolution;
 
 //functions
 function toggleBox(e) {
-    e.target.classList.toggle("clicked");
+    if (e.target.classList.contains("clicked") == false && e.target.classList.contains("exed") == false) {
+        e.target.classList.add("clicked");
+    } else if (e.target.classList.contains("clicked")) {
+        e.target.classList.remove("clicked");
+        e.target.classList.add("exed");
+    } else if (e.target.classList.contains("exed")){
+        e.target.classList.remove("exed");
+    }
+    
 }
+
+/*function toggleBox(e) {
+    e.target.classList.toggle("exed");
+    e.target.classList.remove("clicked");
+}*/
 
 function getNewPuzzle() {
     let puzzlePicker = Math.floor(Math.random() * (0 - Puzzle.puzzles.length) + Puzzle.puzzles.length);
@@ -69,6 +83,9 @@ function endPuzzle() {
     buttonCheck.style.display = "none";
     boxes.forEach((box) => {
         box.removeEventListener("click", toggleBox);
+        if (box.classList.contains("exed")) {
+            box.classList.remove("exed");
+        }
     })
 }
 
@@ -79,6 +96,9 @@ function resetPuzzle () {
     boxes.forEach((box) => {
         if (box.classList.contains("clicked")) {
             box.classList.remove("clicked");
+        }
+        if (box.classList.contains("exed")) {
+            box.classList.remove("exed");
         }
         box.addEventListener("click", toggleBox);
     })
