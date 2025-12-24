@@ -28,7 +28,7 @@ const buttonReset = document.querySelector("button.reset");
 //const hiPuzzle = new Puzzle("0111101001011110100101111", ["", "0", "5", "1<br>1<br>1", "1<br>1<br>1", "5", "4", "1, 1", "4", "1, 1", "4"], "日 (sun)");
 const heart = new Puzzle("0000000000011000110011110111101111111110111111111001111111000111111100001111100000011100000000100000", ["", "3", "6", "7", "7", "7", "7", "7", "6", "3", "0", "0", "2, 2", "4, 4", "9", "9", "7", "7", "5", "3", "1"], "heart");
 const ki = new Puzzle("0000110000000011000000001100001111111111111111111100011110000011111100011011011011001100111000110001", ["", "2<br>2", "2<br>2", "2<br>2", "4", "10", "10", "4", "2<br>2", "2<br>2", "2<br>2", "2", "2", "2", "10", "10", "4", "6", "2, 2, 2", "2, 2, 2", "1, 2, 1"], "木 (tree)");
-
+const dino = new Puzzle("0011000000001100000011110000000001000000000110000000011111000001111111000011100000000100000000110000", ["", "1", "1", "3", "7", "4<br>1", "5", "3", "2", "1", "1", "2", "2", "4", "1", "2", "5", "7", "3", "1", "2"], "dinosaur");
 //variables
 let currentPuzzle;
 let currentHintValues;
@@ -57,7 +57,7 @@ function getNewPuzzle() {
     currentPuzzle = Puzzle.puzzles[puzzlePicker];
     currentHintValues = currentPuzzle.hintValues;
     currentSolution = currentPuzzle.solution;
-    for (let i = 0; i < hints.length; i++) {
+    for (let i = 0; i < currentHintValues.length; i++) {
         hints[i].innerHTML = currentHintValues[i];
     }
 }
