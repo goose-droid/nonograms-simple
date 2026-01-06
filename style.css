@@ -48,11 +48,11 @@ form {
 }
 
 .puzzle div.clicked {
-    background-color:rgb(31, 143, 143);
+    background-color:rgb(7, 109, 156);
 }
 
 .puzzle div.exed {
-    background-color:coral;
+    background-color:rgb(247, 140, 69);
 }
 
 button {
