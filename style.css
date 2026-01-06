@@ -1,3 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-image: url("flowers 26.gif");
+}
+
+#wrapper {
+    background-color: #ffffff99;
+    max-width: 1000px;
+    margin: auto;
+    padding: 25px;
+    margin-top: 10px;
+    border-radius: 25px;
+    border: solid 2px darkgreen;
+}
+
+h1, p {
+    padding: 10px;
+}
+
+form {
+    padding: 10px;
+}
+
 .puzzle {
     display: grid;
     grid-template-columns: 100px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px;
