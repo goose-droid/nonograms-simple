@@ -10,7 +10,7 @@ A webpage with simple nonogram puzzles.
 
 #### bigger puzzles
 - [x] add columns and rows -- 5x5?
-- [ ] 10 x 10?
+- [x] 10 x 10?
 
 #### Multipuzzle support -- random
 - [x] class of puzzle, fields for solution and hints and name
