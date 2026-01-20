@@ -41,6 +41,10 @@ const result = document.querySelector("#result");
 const buttonCheck = document.querySelector("button.check");
 const buttonReset = document.querySelector("button.reset");
 const buttonGo = document.querySelector("button.go");
+const buttonRandom = document.querySelector("button.random");
+const puzzleSelect = document.querySelector("#puzzle-select");
+const buttonCatSubmit = document.querySelector("button.category-submit");
+const categorySelect = document.querySelector("#category-select");
 
 //puzzles
 //const circlePuzzle = new Puzzle("0000001110010100111000000", ["", "0", "3", "1<br>1", "3", "0", "0", "3", "1, 1", "3", "0"], "circle");
@@ -79,9 +83,33 @@ function toggleBox(e) {
     e.target.classList.remove("clicked");
 }*/
 
-function getNewPuzzle() {
+function getRandomPuzzle() {
     let puzzlePicker = Math.floor(Math.random() * (0 - Puzzle.puzzles.length) + Puzzle.puzzles.length);
     currentPuzzle = Puzzle.puzzles[puzzlePicker];
+    currentHintValues = currentPuzzle.hintValues;
+    currentSolution = currentPuzzle.solution;
+    for (let i = 0; i < hints.length; i++) {
+        hints[i].innerHTML = currentHintValues[i];
+    }
+}
+
+function getPickedPuzzle(cat, puz) {
+    switch (cat){
+        case "kanji":
+            break;
+        case "sherlockian":
+            break;
+        case "utdr":
+            break;
+        case "other":
+            break;
+        default:
+            getRandomPuzzle();
+            break;
+
+    }
+        
+    currentPuzzle = Puzzle.puzzles;
     currentHintValues = currentPuzzle.hintValues;
     currentSolution = currentPuzzle.solution;
     for (let i = 0; i < hints.length; i++) {
@@ -133,14 +161,29 @@ function resetPuzzle () {
     getNewPuzzle();
 }
 
-function fillPuzzleSelect() {
-
+function fillPuzzleSelect(chosenCategory) {
+    let selectorString = "";
+    for (i = 0; i < chosenCategory.length; i++) {
+        selectorString = selectorString + `<option value='${i}'>${i + 1}</option>`;
+    }
+    puzzleSelect.innerHTML = selectorString;
 }
 
+function clickCatSubmit() {
+    fillPuzzleSelect(categorySelect.value);
+    puzzleSelect.style.display = "block";
+    buttonGo.style.display= "block";
+}
+
+function clickGo() {
+    puzzleSelect.style.display = "none";
+    buttonGo.style.display= "none";
+
+}
 //main code
 
 
-getNewPuzzle();
+getRandomPuzzle();
 
 boxes.forEach((box) => {
     box.addEventListener("click", toggleBox);
