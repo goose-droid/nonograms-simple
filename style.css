@@ -45,6 +45,7 @@ article {
 
 .controls {
     min-width:200px;
+    max-width: 325px;
     padding: 20px;
 }
 

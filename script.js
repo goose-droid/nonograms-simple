@@ -40,6 +40,7 @@ const hints = document.querySelectorAll(".puzzle div.border");
 const result = document.querySelector("#result");
 const buttonCheck = document.querySelector("button.check");
 const buttonReset = document.querySelector("button.reset");
+const buttonGo = document.querySelector("button.go");
 
 //puzzles
 //const circlePuzzle = new Puzzle("0000001110010100111000000", ["", "0", "3", "1<br>1", "3", "0", "0", "3", "1, 1", "3", "0"], "circle");
@@ -132,7 +133,12 @@ function resetPuzzle () {
     getNewPuzzle();
 }
 
+function fillPuzzleSelect() {
+
+}
+
 //main code
+
 
 getNewPuzzle();
 
