@@ -10,7 +10,8 @@ body {
 
 #wrapper {
     background-color: #ffffff99;
-    max-width: 700px;
+    min-width: 360px;
+    max-width: 750px;
     margin: auto;
     padding: 25px;
     margin-top: 10px;
@@ -26,13 +27,29 @@ form {
     padding: 10px;
 }
 
+article {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .puzzle {
     display: grid;
     border: solid 3px black;
     grid-template-columns: 100px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px;
     grid-template-rows: 100px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px;
-    float: left;
+    /*float: left;*/
     margin: 15px;
+    width: 350px; 
+    height: 350px; 
+}
+
+.controls {
+    min-width:200px;
+    padding: 20px;
+}
+
+.instructions {
+    min-width: 300px;
 }
 
 .puzzle div.border {
@@ -57,7 +74,7 @@ form {
 
 button {
     padding: 10px;
-    margin: 5px;
+    margin: 0px;
 }
 
 button.reset {
