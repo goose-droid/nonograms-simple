@@ -19,13 +19,3 @@ A webpage with simple nonogram puzzles.
 #### Make look better
 - [ ] colors. fonts. arrangement on the page. etc.
 - [x] figure out how to make border taller (top) or wider (left) to hold longer hints
-
-### Extra
-- Puzzle selector
-- Puzzles with varying sizes (class field?)
-    - js generates grid instead of it being in html
-- automatically check against solution as puzzle is worked on.
-    - check solution runs every time a box is clicked
-    - ideally should only show incorrect if there's a 1 where there needed to be a 0, not if there's a mismatch at all.
-- right click on box changes color but doesn't count for clicked. for draft/guess squares
-    - alternatively, a click cycles through plain, "clicked", different color, X
