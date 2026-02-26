@@ -5,7 +5,7 @@
 
 body {
     font-family: sans-serif;
-    background-image: url("flowers 26.gif");
+    background-image: url("pattern\ 239.gif");
 }
 
 #wrapper {
@@ -16,7 +16,7 @@ body {
     padding: 25px;
     margin-top: 10px;
     border-radius: 25px;
-    border: solid 2px darkgreen;
+    border: solid 2px rgb(30, 0, 112);
 }
 
 h1, p {
@@ -76,10 +76,15 @@ article {
 button {
     padding: 8px;
     margin: 15px 0px;
+    background-color:rgb(220, 243, 241);
 }
 
 button.reset {
     display: none;
+}
+
+select {
+    background-color:rgb(220, 243, 241);
 }
 
 hr {
