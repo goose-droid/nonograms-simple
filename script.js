@@ -93,28 +93,35 @@ function getRandomPuzzle() {
     }
 }
 
-function getPickedPuzzle(cat, puz) {
+function getPickedPuzzle(cat) {
+    let currentCat = Puzzle.puzzles;
+
     switch (cat){
         case "kanji":
+            currentCat = Puzzle.kanji;
             break;
         case "sherlockian":
+            currentCat = Puzzle.sherlockian;
             break;
         case "utdr":
+            currentCat=Puzzle.utdr;
             break;
         case "other":
+            currentCat=Puzzle.other;
             break;
         default:
-            getRandomPuzzle();
+            currentCat = Puzzle.puzzles;
             break;
-
     }
-        
-    currentPuzzle = Puzzle.puzzles;
+
+    let puzzlePicker = Math.floor(Math.random() * (0 - currentCat.length) + currentCat.length);
+    currentPuzzle = currentCat[puzzlePicker];
     currentHintValues = currentPuzzle.hintValues;
     currentSolution = currentPuzzle.solution;
     for (let i = 0; i < hints.length; i++) {
         hints[i].innerHTML = currentHintValues[i];
     }
+        
 }
 
 function checkAnswer() {
@@ -158,21 +165,31 @@ function resetPuzzle () {
         }
         box.addEventListener("click", toggleBox);
     })
-    getNewPuzzle();
+    getRandomPuzzle();
 }
-
+/*
 function fillPuzzleSelect(chosenCategory) {
     let selectorString = "";
     for (i = 0; i < chosenCategory.length; i++) {
         selectorString = selectorString + `<option value='${i}'>${i + 1}</option>`;
     }
     puzzleSelect.innerHTML = selectorString;
-}
+}*/
 
 function clickCatSubmit() {
-    fillPuzzleSelect(categorySelect.value);
-    puzzleSelect.style.display = "block";
-    buttonGo.style.display= "block";
+    buttonReset.style.display = "none";
+    buttonCheck.style.display = "block";
+    result.innerHTML = "";
+    boxes.forEach((box) => {
+        if (box.classList.contains("clicked")) {
+            box.classList.remove("clicked");
+        }
+        if (box.classList.contains("exed")) {
+            box.classList.remove("exed");
+        }
+        box.addEventListener("click", toggleBox);
+    })
+    getPickedPuzzle(categorySelect.value);
 }
 
 function clickGo() {
@@ -191,4 +208,5 @@ boxes.forEach((box) => {
 
 buttonCheck.addEventListener("click", checkAnswer);
 buttonReset.addEventListener("click", resetPuzzle);
+buttonCatSubmit.addEventListener("click", clickCatSubmit);
     

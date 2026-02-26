@@ -74,10 +74,18 @@ article {
 }
 
 button {
-    padding: 10px;
-    margin: 0px;
+    padding: 8px;
+    margin: 15px 0px;
 }
 
 button.reset {
     display: none;
+}
+
+hr {
+    margin: 25px 0px;
+}
+
+label {
+    margin-bottom: 15px;
 }

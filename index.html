@@ -135,7 +135,10 @@
             <div class="grid"></div>
           </div> 
           <div class = "controls">
-            <button class="check">Check</button><br>
+            <button class="check">Check</button>
+            <button class="reset">Reset</button>
+            <div id="result"></div>
+            <hr>
             <label for="category-select">Pick a category:</label><br>
             <select name="categories" id="category-select">
               <option value="kanji">Kanji</option>
@@ -144,13 +147,13 @@
               <option value="other">Other</option>
             </select>
             <button class="category-submit">Submit</button><br>
+            <!--
             <label for="puzzle-select">Pick a puzzle (leave blank for a random puzzle from your chosen category):</label><br>
             <select name="puzzles" id="puzzle-select">
             </select>
-            <button class = "go">Go</button><br>
+            <button class = "go">Go</button><br> 
+            -->
             <button class = "random">Random Puzzle from all categories</button><br>
-            <button class="reset">Reset</button>
-            <div id="result"></div>
           </div>
           <div class = "instructions">
             <h2>How to play</h2> 
@@ -159,7 +162,7 @@
             <p>The numbers indicate the number of dark blue boxes there should be in each row and column, split into groups. For example, if the top row has a hint of "2, 3, 3", that means that the top row contains 8 dark blue boxes, split into groups of 2, 3, and 3. There is at least one light blue box between each group of dark blue boxes.</p>
             <p>If you want, you can use the orange color to keep track of boxes you know cannot be dark blue. When checking your work, the computer ignores the orange boxes, counting them the same as light blue.</p>
             <p>When you are done, check to see if you solved the puzzle using the "Check" button. You may then start another game by using the "Reset" button.</p>
-            <p>There are eight separate puzzles, and one of these is selected randomly when you click "Reset" or refresh the page.</p>
+            <p>There are seven puzzles, in four categories. When the page is loaded, a random puzzle from all categories is selected. If you wish to only get puzzles from one category, you can pick it from the drop down menu and click submit. This will pull up a random puzzle from that selected category.</p>
           </div>
         </article>
       </div>
