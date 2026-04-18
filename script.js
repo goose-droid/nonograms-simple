@@ -211,4 +211,5 @@ boxes.forEach((box) => {
 buttonCheck.addEventListener("click", checkAnswer);
 buttonReset.addEventListener("click", resetPuzzle);
 buttonCatSubmit.addEventListener("click", clickCatSubmit);
+buttonRandom.addEventListener("click", resetPuzzle);
     
